@@ -1,0 +1,10 @@
+.card {
+    font-size: 16px;
+    width: 63mm;
+    height: 88mm;
+    border: solid grey 1mm;
+    box-sizing: border-box;
+    display: inline-block;
+    border-radius: 2mm;
+    vertical-align: top;
+}

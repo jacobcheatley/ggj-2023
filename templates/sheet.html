@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/sheet.css">
+    <link rel="stylesheet" href="/css/card.css">
+</head>
+
+{% from "card.html" import card with context %}
+
+<body>
+    <div class="sheet">
+        {% for card_data in cards %}
+            {{ card(data=card_data) }}
+        {% endfor %}
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+{% macro card(data) -%}
+    <div class="card">
+        <h1>{{ data['name'] }}</h1>
+        <span>{{ data['effect'] }}</span>
+    </div>
+{%- endmacro %}

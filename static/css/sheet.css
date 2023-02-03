@@ -1,0 +1,14 @@
+.sheet {
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start; */
+    font-size: 0;
+}
+
+@media print {
+    .card {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
