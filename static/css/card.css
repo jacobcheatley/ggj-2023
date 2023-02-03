@@ -1,10 +1,112 @@
+:root {
+    /* LIGHT https://coolors.co/palette/ccd5ae-e9edc9-fefae0-faedcd-d4a373 */
+    /* DARK https://coolors.co/palette/606c38-283618-fefae0-dda15e-bc6c25 */
+    /* Plus #111 */
+    --text-color: #111;
+    --border-color: #111;
+    --frame-color: #D4A373;
+    --backing-color: #FEFAE0;
+
+    --default-font-size: 16px;
+    --default-line-height: 20px;
+    --top-font-size: 16px;
+    --top-line-height: 20px;
+    --effect-font-size: 16px;
+    --effect-line-height: 20px;
+    --bottom-font-size: 16px;
+    --bottom-line-height: 20px;
+}
+
 .card {
-    font-size: 16px;
+    font-size: var(--default-font-size);
+    line-height: var(--default-line-height);
     width: 63mm;
     height: 88mm;
-    border: solid grey 1mm;
+    border: solid var(--border-color) 1.5mm;
+    background-color: var(--border-color);
     box-sizing: border-box;
-    display: inline-block;
+    display: inline-flex;
+    align-items: stretch;
     border-radius: 2mm;
     vertical-align: top;
+}
+
+.card_frame {
+    background-color: var(--frame-color);
+    padding: 3mm;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 2mm;
+}
+
+/* Top */
+.top_bar {
+    font-size: var(--top-font-size);
+    line-height: var(--top-line-height);
+    background-color: var(--backing-color) !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 1mm;
+}
+
+.top_bar .symbol {
+    height: var(--top-font-size);
+}
+
+
+/* Middle */
+.image_box {
+    aspect-ratio: 4 / 3;
+    box-sizing: border-box;
+    border: solid var(--border-color) 1px;
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.effect_box {
+    font-size: var(--effect-font-size);
+    line-height: var(--effect-line-height);
+    background-color: var(--backing-color);
+    flex-grow: 1;
+    padding: 1mm;
+}
+
+.effect_box .symbol {
+    height: var(--effect-font-size);
+}
+
+/* Bottom */
+.bottom_bar {
+    font-size: var(--bottom-font-size);
+    line-height: var(--bottom-line-height);
+}
+
+.bottom_bar .symbol {
+    height: var(--bottom-font-size);
+}
+
+/* Misc Style components */
+b {
+    font-weight: bold;
+}
+
+.red {
+    color: red;
+}
+
+.symbol {
+    display: inline-block;
+    margin: 0;
+    margin-left: 0.15mm;
+    margin-right: 0.15mm;
+    padding: 0;
+    vertical-align: text-bottom;
 }

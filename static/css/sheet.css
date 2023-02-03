@@ -8,6 +8,8 @@
 
 @media print {
     .card {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
         break-inside: avoid;
         page-break-inside: avoid;
     }

@@ -1,6 +1,20 @@
 {% macro card(data) -%}
     <div class="card">
-        <h1>{{ data['name'] }}</h1>
-        <span>{{ data['effect'] }}</span>
+        <div class="card_frame">
+            <div class="top_bar">
+                <h1 class="name_text">{{ data['name'] }}</h1>
+                <h1 class="cost_number">{{ data['cost'] | safe }}</h1>
+            </div>
+            <div class="image_box">
+                <!-- TODO actually use an image source -->
+                <div class="image">{{ data['image'] }}</div>
+            </div>
+            <div class="effect_box">
+                <p class="effect_text">{{ data['effect'] | safe }}</p>
+            </div>
+            <div class="bottom_bar">
+                <h1 class="mulch_number">{{ data['mulch'] | safe }}</h1>
+            </div>
+        </div>
     </div>
 {%- endmacro %}
