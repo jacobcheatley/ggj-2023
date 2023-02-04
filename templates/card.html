@@ -1,19 +1,18 @@
 {% macro card(data) -%}
     <div class="card">
-        <div class="card_frame">
+        <div class="card_frame {% if data['starter'] -%}starter{% endif %}">
             <div class="top_bar">
-                <h1 class="name_text">{{ data['name'] }}</h1>
-                <h1 class="cost_number">{{ data['cost'] | safe }}</h1>
+                <div class="name_text">{{ data['name'] }}</div>
+                <div class="cost_number">{{ data['cost'] | safe }}</div>
             </div>
             <div class="image_box">
-                <!-- TODO actually use an image source -->
-                <div class="image">{{ data['image'] }}</div>
+                <img class="image" src="/images/card/{{ data['image'] }}">
             </div>
             <div class="effect_box">
-                <p class="effect_text">{{ data['effect'] | safe }}</p>
+                <div class="effect_text">{{ data['effect'] | safe }}</div>
             </div>
             <div class="bottom_bar">
-                <h1 class="mulch_number">{{ data['mulch'] | safe }}</h1>
+                <div class="mulch_number">{{ data['mulch'] | safe }}</div>
             </div>
         </div>
     </div>

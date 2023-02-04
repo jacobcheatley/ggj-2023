@@ -2,22 +2,38 @@
     /* LIGHT https://coolors.co/palette/ccd5ae-e9edc9-fefae0-faedcd-d4a373 */
     /* DARK https://coolors.co/palette/606c38-283618-fefae0-dda15e-bc6c25 */
     /* Plus #111 */
+
+    --root-color: #67311b;
+    --root-mid-color: #9E6047;
+    --root-lightest-color: #FFE7D5;
+    --root-complementary-blue-color: #71A6FF;
+
     --text-color: #111;
     --border-color: #111;
-    --frame-color: #D4A373;
-    --backing-color: #FEFAE0;
+    --starter-border-color: rgb(35, 153, 6);
+    --frame-color: rgba(103, 49, 27, 0.2);
+    --starter-frame-color: rgba(60, 223, 19, 0.2);
+    --backing-color: var(--root-lightest-color);
+
+    --mulch-color: rgb(233, 182, 134);
 
     --default-font-size: 16px;
-    --default-line-height: 20px;
+    --default-line-height: 22px;
     --top-font-size: 16px;
-    --top-line-height: 20px;
+    --top-line-height: 22px;
     --effect-font-size: 16px;
-    --effect-line-height: 20px;
+    --effect-line-height: 22px;
     --bottom-font-size: 16px;
-    --bottom-line-height: 20px;
+    --bottom-line-height: 22px;
+
+    --inner-border: solid var(--border-color) 0.75mm;
+    --starter-inner-border: solid var(--starter-border-color) 0.75mm;
+
+    --box-shadow: 1px -1px 2px #111 inset;
 }
 
 .card {
+    font-family: 'Noto Sans';
     font-size: var(--default-font-size);
     line-height: var(--default-line-height);
     width: 63mm;
@@ -32,8 +48,12 @@
 }
 
 .card_frame {
+    background-image: url('/images/frame/framecombined.png');
     background-color: var(--frame-color);
-    padding: 3mm;
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 1.5mm;
     top: 0;
     left: 0;
     bottom: 0;
@@ -43,17 +63,25 @@
     flex-direction: column;
     width: 100%;
     border-radius: 2mm;
+    position: relative;
+}
+
+.card_frame.starter {
+    background-color: var(--starter-frame-color);
 }
 
 /* Top */
 .top_bar {
     font-size: var(--top-font-size);
     line-height: var(--top-line-height);
-    background-color: var(--backing-color) !important;
+    background-color: var(--backing-color);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 0 1mm;
+    border: var(--inner-border);
+    font-weight: bold;
+    box-shadow: var(--box-shadow);
 }
 
 .top_bar .symbol {
@@ -63,12 +91,17 @@
 
 /* Middle */
 .image_box {
-    aspect-ratio: 4 / 3;
+    /* aspect-ratio: 4 / 3; */
     box-sizing: border-box;
-    border: solid var(--border-color) 1px;
-    background-color: white;
-    text-align: center;
-    vertical-align: middle;
+    border-left: var(--inner-border);
+    border-right: var(--inner-border);
+    padding: 0;
+}
+
+.image {
+    width: 100%;
+    display: block;
+    /* object-fit: cover; */
 }
 
 .effect_box {
@@ -77,6 +110,9 @@
     background-color: var(--backing-color);
     flex-grow: 1;
     padding: 1mm;
+    box-sizing: border-box;
+    border: var(--inner-border);
+    box-shadow: var(--box-shadow);
 }
 
 .effect_box .symbol {
@@ -85,12 +121,32 @@
 
 /* Bottom */
 .bottom_bar {
-    font-size: var(--bottom-font-size);
-    line-height: var(--bottom-line-height);
+    margin: auto;
+    position: relative;
+    top: -20px;
+    height: 2mm;
 }
 
-.bottom_bar .symbol {
+.mulch_number {
+    font-size: var(--bottom-font-size);
+    line-height: calc(var(--bottom-line-height) - 2px);
+    background-color: var(--mulch-color);
+    border: var(--inner-border);
+    padding: 1mm;
+    border-radius: 99mm;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.starter .mulch_number {
+    border: var(--starter-inner-border);
+}
+
+.mulch_number .symbol {
     height: var(--bottom-font-size);
+    display: block;
+    bottom: 0;
 }
 
 /* Misc Style components */
@@ -108,5 +164,13 @@ b {
     margin-left: 0.15mm;
     margin-right: 0.15mm;
     padding: 0;
-    vertical-align: text-bottom;
+    vertical-align: middle;
+    position: relative;
+    bottom: 2px;
+}
+
+
+
+.card_frame.starter > div {
+    border-color: var(--starter-border-color);
 }
