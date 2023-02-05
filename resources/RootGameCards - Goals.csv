@@ -1,0 +1,11 @@
+name,condition,effect,image
+Large Network,Have a total of 9 root [T] in your network,When achieved - You may sacrifice a root [T] to draw a card.,
+Branching Roots,Connect to 3 different water sources,Once per game - Look at the top three cards of the market deck and draw one. Put the rest on the bottom.,
+Deep Well,Connect 3 root [T] to a single water source,When achieved - Acquire a card from the market for free.,
+Destructive,Destroy or blight 3 root [T] in a single turn,Forever - Pay [W][W][N][N] and discard your hand to gain control of a [B] [T].,
+Versatile,Have 15 cards in your deck,"Forever - Whenever you play a non-starter card, you may discard three cards to copy its effect.",
+Wide Roots,Have root [T] touching opposite sides of the map,When achieved - Your opponent discards two cards.,
+Severed,Control 3 root [T] that are not in your network,When achieved - Replace one of those root [T] with a seed [T].,
+What Plants Crave,Connect 3 root [T] to a single nutrient source,Once per game - Pay [N][N][N] to draw the top two cards of the market deck.,
+Weathering the Storm,Play 5 cards in one turn,Once per game - Discard any number of cards to draw that many cards plus one.,
+Rapid Growth,Place 4 root [T] in one turn,When achieved - Return a card from your graveyard to your hand.,

@@ -7,7 +7,7 @@
 }
 
 @media print {
-    .card {
+    .card, .goal {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
         break-inside: avoid;

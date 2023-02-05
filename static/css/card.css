@@ -11,6 +11,7 @@
     --text-color: #111;
     --border-color: #111;
     --starter-border-color: rgb(35, 153, 6);
+    --goal-border-color: rgb(201, 164, 0);
     --frame-color: rgba(103, 49, 27, 0.2);
     --starter-frame-color: rgba(60, 223, 19, 0.2);
     --backing-color: var(--root-lightest-color);
@@ -19,19 +20,79 @@
 
     --default-font-size: 16px;
     --default-line-height: 22px;
-    --top-font-size: 16px;
-    --top-line-height: 22px;
-    --effect-font-size: 16px;
-    --effect-line-height: 22px;
-    --bottom-font-size: 16px;
-    --bottom-line-height: 22px;
+
+    --bigger-font-size: 22px;
+    --bigger-line-height: 28px;
 
     --inner-border: solid var(--border-color) 0.75mm;
     --starter-inner-border: solid var(--starter-border-color) 0.75mm;
+    --goal-inner-border: solid var(--goal-border-color) 0.75mm;
 
-    --box-shadow: 1px -1px 2px #111 inset;
+    --box-shadow: 1px -1px 4px #111 inset;
 }
 
+/* GOAL */
+.goal {
+    font-family: 'Noto Sans';
+    font-size: var(--default-font-size);
+    line-height: var(--default-line-height);
+    width: 88mm;
+    height: 63mm;
+    border: solid var(--border-color) 1.5mm;
+    background-color: var(--border-color);
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: stretch;
+    border-radius: 2mm;
+    vertical-align: top;
+}
+
+.goal_frame {
+    background-image: url('/images/frame/leaves.png');
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 1.5mm;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 2mm;
+    position: relative;
+}
+
+.goal_top_bar {
+    background-color: var(--backing-color);
+    padding: 0 1mm;
+    border: var(--goal-inner-border);
+    box-shadow: var(--box-shadow);
+    font-weight: bold;
+    text-align: center;
+    font-size: var(--bigger-font-size);
+    line-height: var(--bigger-line-height);
+    opacity: 90%;
+}
+
+.goal_condition_box {
+    /* align-self: flex-end; */
+    background-color: var(--backing-color);
+    padding: 0 1mm;
+    border: var(--goal-inner-border);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    opacity: 90%;
+}
+
+.goal_effect_text {
+    border-top: var(--goal-inner-border);
+}
+
+/* CARD */
 .card {
     font-family: 'Noto Sans';
     font-size: var(--default-font-size);
@@ -72,8 +133,8 @@
 
 /* Top */
 .top_bar {
-    font-size: var(--top-font-size);
-    line-height: var(--top-line-height);
+    font-size: var(--default-font-size);
+    line-height: var(--default-line-height);
     background-color: var(--backing-color);
     display: flex;
     flex-direction: row;
@@ -85,7 +146,7 @@
 }
 
 .top_bar .symbol {
-    height: var(--top-font-size);
+    height: var(--default-font-size);
 }
 
 
@@ -105,8 +166,8 @@
 }
 
 .effect_box {
-    font-size: var(--effect-font-size);
-    line-height: var(--effect-line-height);
+    font-size: var(--default-font-size);
+    line-height: var(--default-line-height);
     background-color: var(--backing-color);
     flex-grow: 1;
     padding: 1mm;
@@ -116,7 +177,7 @@
 }
 
 .effect_box .symbol {
-    height: var(--effect-font-size);
+    height: var(--default-font-size);
 }
 
 /* Bottom */
@@ -128,8 +189,8 @@
 }
 
 .mulch_number {
-    font-size: var(--bottom-font-size);
-    line-height: calc(var(--bottom-line-height) - 2px);
+    font-size: var(--default-font-size);
+    line-height: calc(var(--default-line-height) - 2px);
     background-color: var(--mulch-color);
     border: var(--inner-border);
     padding: 1mm;
@@ -144,7 +205,7 @@
 }
 
 .mulch_number .symbol {
-    height: var(--bottom-font-size);
+    height: var(--default-font-size);
     display: block;
     bottom: 0;
 }
@@ -167,8 +228,8 @@ b {
     vertical-align: middle;
     position: relative;
     bottom: 2px;
+    height: var(--default-font-size);
 }
-
 
 
 .card_frame.starter > div {

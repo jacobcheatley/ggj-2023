@@ -1,0 +1,13 @@
+{% macro goal(data) -%}
+    <div class="goal">
+        <div class="goal_frame">
+            <div class="goal_top_bar">
+                <div class="goal_name_text">{{ data['name'] }}</div>
+            </div>
+            <div class="goal_condition_box">
+                <div class="goal_condition_text">{{ data['condition'] | safe }}</div>
+                <div class="goal_effect_text">{{ data['effect'] | safe }}</div>
+            </div>
+        </div>
+    </div>
+{%- endmacro %}
